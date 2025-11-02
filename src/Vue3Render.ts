@@ -245,7 +245,10 @@ export class Vue3Renderer {
     // 直接使用外部传入的props，不再提取内部变量
     return createSSRApp({
       template: this.sanitizeTemplate(template),
-      setup: () => props
+      setup: () => {
+        // 在setup中返回props，使其在模板中可访问
+        return { ...props };
+      }
     });
   }
 
