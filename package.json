@@ -1,0 +1,34 @@
+{
+  "name": "vue3-renderer",
+  "version": "1.0.0",
+  "description": "Vue3单文件渲染器和截图工具",
+  "main": "dist/app.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "tsx src/app.ts",
+    "build": "tsc",
+    "test": "tsx src/test-niu-rank.ts",
+    "test2": "tsx src/test-niu-info.ts"
+  },
+  "dependencies": {
+    "@vue/compiler-sfc": "^3.3.4",
+    "@vue/server-renderer": "^3.3.4",
+    "axios": "^1.9.0",
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "form-data": "^4.0.0",
+    "node-fetch": "^3.3.2",
+    "playwright": "^1.56.1",
+    "puppeteer-core": "^21.0.0",
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.5",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.30",
+    "@types/puppeteer-core": "^5.4.0",
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.3"
+  },
+  "type": "module"
+}
