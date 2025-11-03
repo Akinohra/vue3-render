@@ -47,7 +47,7 @@ async function ensureOutputsDir() {
 }
 
 // API端点配置
-const API_BASE_URL = 'http://127.0.0.1:30000/api';
+const API_BASE_URL = 'http://127.0.0.1:65002/api';
 const HEALTH_ENDPOINT = `${API_BASE_URL}/health`;
 const RENDER_HTML_ENDPOINT = `${API_BASE_URL}/render-html`;
 const SCREENSHOT_ENDPOINT = `${API_BASE_URL}/screenshot`;

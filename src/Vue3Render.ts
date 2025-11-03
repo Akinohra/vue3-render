@@ -368,35 +368,7 @@ export class Vue3Renderer {
         const { html } = await this.renderToHTML(vueFilePath, props);
         
         // 将HTML内容设置到页面
-        await page.setContent(html, { waitUntil: 'networkidle' });
-        
-        // 等待所有图片加载完成
-        // await page.evaluate(() => {
-        //   return new Promise<void>((resolve) => {
-        //     const images = document.querySelectorAll('img');
-        //     if (images.length === 0) {
-        //       resolve();
-        //       return;
-        //     }
-            
-        //     let loadedCount = 0;
-        //     const onLoad = () => {
-        //       loadedCount++;
-        //       if (loadedCount === images.length) {
-        //         resolve();
-        //       }
-        //     };
-            
-        //     images.forEach(img => {
-        //       if (img.complete) {
-        //         onLoad();
-        //       } else {
-        //         img.addEventListener('load', onLoad);
-        //         img.addEventListener('error', onLoad); // 即使加载失败也继续
-        //       }
-        //     });
-        //   });
-        // });
+        await page.setContent(html, { waitUntil: 'domcontentloaded' });
         await page.waitForFunction(() => {
           const images = Array.from(document.querySelectorAll('img'));
           return images.every(img => img.complete);

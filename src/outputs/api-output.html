@@ -11,604 +11,374 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-/* 容器样式 */
-.user-info-container {
-  background: linear-gradient(135deg, #0c0f1d 0%, #12172e 100%);
+.niu-rank-container {
   position: relative;
   overflow: hidden;
-  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #0f172a, #1e293b, #0f172a);
   min-height: 100vh;
+  color: #cbd5e1;
+  font-family: 'ZCOOL KuaiLe', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-/* 动态背景 */
-.background-animation {
+/* 修改数字字体为艺术字体 */
+.niu-rank-container .rank-number,
+.niu-rank-container .value-number,
+.niu-rank-container .data-unit {
+  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  /* 添加一些样式增强数字的艺术感 */
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.background-decoration {
   position: absolute;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
+  opacity: 0.1;
 }
 
-.orb {
+.decoration-circle {
   position: absolute;
   border-radius: 50%;
-  filter: blur(60px);
-  opacity: 0.4;
+  filter: blur(2rem);
 }
 
-.orb-1 {
-  width: 300px;
-  height: 300px;
-  background: linear-gradient(45deg, #ff9a9e, #fad0c4);
-  top: 5%;
-  left: 2%;
+.amber-circle {
+  top: 5rem;
+  left: 2.5rem;
+  width: 8rem;
+  height: 8rem;
+  background-color: #fbbf24;
 }
 
-.orb-2 {
-  width: 250px;
-  height: 250px;
-  background: linear-gradient(45deg, #a1c4fd, #c2e9fb);
-  bottom: 10%;
-  right: 5%;
+.blue-circle {
+  top: 10rem;
+  right: 5rem;
+  width: 6rem;
+  height: 6rem;
+  background-color: #60a5fa;
 }
 
-.orb-3 {
-  width: 200px;
-  height: 200px;
-  background: linear-gradient(45deg, #d4fc79, #96e6a1);
-  top: 40%;
-  left: 15%;
-}
-
-.orb-4 {
-  width: 150px;
-  height: 150px;
-  background: linear-gradient(45deg, #84fab0, #8fd3f4);
-  top: 70%;
-  left: 70%;
-}
-
-.grid-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    linear-gradient(rgba(92, 119, 255, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(92, 119, 255, 0.1) 1px, transparent 1px);
-  background-size: 20px 20px;
-}
-
-.floating-particles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-    radial-gradient(rgba(255, 255, 255, 0.15) 0.5px, transparent 0.5px);
-  background-size: 40px 40px, 20px 20px;
-  background-position: 0 0, 20px 20px;
+.purple-circle {
+  bottom: 8rem;
+  left: 33%;
+  width: 7rem;
+  height: 7rem;
+  background-color: #a78bfa;
 }
 
 .content-wrapper {
-  position: relative;
-  z-index: 1;
-  max-width: 1200px;
+  max-width: 80rem;
   margin: 0 auto;
-}
-
-/* 现代化用户卡片 */
-.modern-user-card {
-  background: rgba(25, 30, 50, 0.7);
-  backdrop-filter: blur(20px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 
-    0 25px 50px -12px rgba(0, 0, 0, 0.6),
-    inset 0 0 20px rgba(100, 150, 255, 0.1);
-  overflow: hidden;
   position: relative;
-  margin: 0 auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 2rem 2rem 1rem;
-  background: rgba(30, 35, 60, 0.4);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-/* 排名徽章 */
-.modern-rank-badge {
-  position: relative;
-  top: 0;
-  right: 0;
   z-index: 10;
-  width: 80px;
-  height: 80px;
+}
+
+.header-section {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.title-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.main-title {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 5px;
+  font-size: 3rem;
+  font-weight: 900;
+  background: linear-gradient(to right, #fde68a, #fbbf24, #fde68a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+.main-title svg{
+  fill: #fbbf24;
 }
 
-.rank-inner {
-  width: 70px;
-  height: 70px;
-  border-radius: 12px;
+.title-glow {
+  position: absolute;
+  inset: -1.25rem;
+  background: linear-gradient(to right, #fbbf2420, #fbbf2420, #fbbf2420);
+  filter: blur(2rem);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #60a5fa;
+  font-weight: 500;
+  text-shadow: 0 0 12px rgba(96, 165, 250, 0.3);
+}
+
+.ranking-grid {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-  transform: rotate(10deg);
-  transition: transform 0.3s ease;
+  gap: 1rem;
 }
 
-.rank-first {
-  background: linear-gradient(135deg, #FFD700, #FFA500);
-  border: 2px solid #FFD700;
+.ranking-card {
+  position: relative;
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, var(--bg-from), var(--bg-to));
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  box-shadow: 0 0.75rem 1.5rem var(--glow-color);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
 }
 
-.rank-second {
-  background: linear-gradient(135deg, #C0C0C0, #A9A9A9);
-  border: 2px solid #C0C0C0;
+.ranking-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.15);
 }
 
-.rank-third {
-  background: linear-gradient(135deg, #CD7F32, #A0522D);
-  border: 2px solid #CD7F32;
-}
-
-.rank-normal {
-  background: linear-gradient(135deg, #6c757d, #495057);
-  border: 2px solid #6c757d;
-}
-
-.rank-text {
-  font-weight: 900;
-  font-size: 1.8rem;
-  color: white;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.rank-label {
-  font-size: 0.7rem;
-  color: rgba(255, 255, 255, 0.9);
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.ranking-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
 }
 
 .card-content {
-  padding: 1.5rem 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-/* 个人信息区域 */
-.profile-section {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  flex: 1;
-  min-width: 300px;
+  padding: 1rem 1.5rem;
+  gap: 1.25rem;
 }
 
-.avatar-container {
-  position: relative;
+.rank-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.5rem;
 }
 
-.avatar-ring {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  padding: 3px;
+.rank-number {
+  font-weight: 900;
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.ring-gold {
-  background: linear-gradient(135deg, #FFD700, #FFA500);
+.rank-first {
+  font-size: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 15px rgba(251, 191, 36, 0.7);
+  filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.9));
 }
 
-.ring-purple {
-  background: linear-gradient(135deg, #8A2BE2, #9370DB);
+.rank-second {
+  font-size: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: linear-gradient(135deg, #a78bfa, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 15px rgba(167, 139, 250, 0.7);
+  filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.9));
 }
 
-.ring-blue {
-  background: linear-gradient(135deg, #1E90FF, #00BFFF);
+.rank-third {
+  font-size: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: linear-gradient(135deg, #60a5fa, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 15px rgba(96, 165, 250, 0.7);
+  filter: drop-shadow(0 0 8px rgba(96, 165, 250, 0.9));
 }
 
-.ring-gray {
-  background: linear-gradient(135deg, #6c757d, #495057);
+.rank-normal {
+  font-size: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #94a3b8;
+}
+
+.avatar-section {
+  display: flex;
+  justify-content: center;
+}
+
+.avatar-wrapper {
+  position: relative;
+}
+
+.avatar-border {
+  padding: 0.2rem;
+  border-radius: 0.875rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
 }
 
 .avatar-image {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 0.725rem;
   object-fit: cover;
-  background: #1e293b;
-  border: 2px solid rgba(25, 30, 50, 0.8);
+  background-color: #334155;
 }
 
-.achievement-badge {
+.achievement-tag {
   position: absolute;
-  top: -6px;
-  right: -6px;
-  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  bottom: -0.35rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.15rem 0.3rem;
+  border-radius: 9999px;
+  background: linear-gradient(to right, #ef4444, #f97316);
   color: white;
-  font-size: 0.7rem;
-  font-weight: bold;
-  padding: 0.2rem 0.4rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(255, 65, 108, 0.4);
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 0 0.15rem 0.3rem rgba(0, 0, 0, 0.25);
 }
 
-.user-basic-info {
+.info-section {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info-left {
   flex: 1;
 }
 
+.info-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.user-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .user-nickname {
-  font-size: 1.4rem;
-  font-weight: 800;
-  margin: 0 0 0.2rem;
+  font-weight: 700;
+  font-size: 2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  margin-right: 0.75rem;
 }
 
-.text-gold {
-  color: #FFD700;
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-  background: linear-gradient(45deg, #ffd700, #ffaa00, #ffd700, #fff470, #ffd700);
+.length-display {
+  display: flex;
+  align-items: baseline;
+  gap: 0.1rem;
+  padding: 0.2rem 0.6rem;
+}
+
+.length-value {
+  font-weight: 700;
+  font-size: 4rem;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.length-value-first {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
   -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: transparent;
-  background-size: 200% 200%;
+  background-clip: text;
+  text-shadow: 0 0 15px rgba(251, 191, 36, 0.7);
+  filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.9));
+}
+.length-value-second {
+  background: linear-gradient(135deg, #a78bfa, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 15px rgba(167, 139, 250, 0.7);
+  filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.9));
+}
+.length-value-third {
+  background: linear-gradient(135deg, #60a5fa, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 15px rgba(96, 165, 250, 0.7);
+  filter: drop-shadow(0 0 8px rgba(96, 165, 250, 0.9));
+}
+.length-value-normal {
+  color: #94b8a3;
 }
 
-.text-purple {
-  color: #8A2BE2;
-  text-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
-}
-
-.text-blue {
-  color: #1E90FF;
-  text-shadow: 0 0 10px rgba(30, 144, 255, 0.5);
-}
-
-.text-gray {
-  color: #adb5bd;
-  text-shadow: 0 0 10px rgba(173, 181, 189, 0.5);
+.length-unit {
+  font-size: 2.5rem;
+  color: #94a3b8;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .user-id {
   font-size: 1rem;
-  color: #a3b3c7;
-  font-weight: 400;
+  color: #a7b894;
+  margin-top: 0;
+  margin-bottom: 0.25rem;
 }
 
-/* 尺寸展示区 */
-.size-display-section {
-  flex: 1;
-  min-width: 200px;
+.data-section {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: rgba(30, 35, 60, 0.3);
-  border-radius: 15px;
-  padding: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 
-    0 10px 20px -5px rgba(0, 0, 0, 0.3),
-    inset 0 0 15px rgba(100, 150, 255, 0.1);
+  gap: 1rem;
 }
 
-.size-display-container {
-  position: relative;
+.data-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.2rem;
 }
 
-.size-value-wrapper {
+.value-number {
   font-weight: 900;
-  font-size: 3.5rem;
-  line-height: 1;
-  margin-bottom: 0.5rem;
-  display: flex;
-  align-items: flex-end;
-  gap: 0.3rem;
+  font-size: 1.5rem;
 }
 
-.size-value {
-  font-size: 3.5rem;
-}
-
-.size-unit {
-  font-size: 1.85rem;
-  margin-bottom: 0.3rem;
-  -webkit-text-fill-color: #f5895e; /* 覆盖父元素的渐变色影响 */
-  background: none; /* 移除父元素的背景渐变 */
-  background-clip: initial; /* 重置背景剪裁 */
-}
-
-.size-label {
-  font-size: 1rem;
-  color: #6c757d;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 600;
-}
-
-.text-gold {
-  color: #FFD700;
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-  background: linear-gradient(45deg, #ffd700, #ffaa00, #ffd700, #fff470, #ffd700);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  background-size: 200% 200%;
-}
-
-.text-purple {
-  background: linear-gradient(135deg, #8A2BE2, #9370DB);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
-
-.text-blue {
-  background: linear-gradient(135deg, #1E90FF, #00BFFF);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
-
-.text-gray {
-  background: linear-gradient(135deg, #adb5bd, #6c757d);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
-
-/* 统计部分 */
-.stats-section {
-  flex: 2;
-  min-width: 300px;
-}
-
-/* 数据统计网格 */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 0.8rem;
-  margin-bottom: 1.5rem;
-}
-
-.stat-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  padding: 0.8rem;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: all 0.3s ease;
-}
-
-.stat-value {
-  font-size: 1.8rem;
-  font-weight: 800;
-  margin-bottom: 0.2rem;
-  color: #37fbff;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(90deg, #37fbff, #00c6ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
-
-.stat-label {
+.data-unit {
+  color: #00acf1;
   font-size: 0.9rem;
-  color: #a3b3c7;
-  margin-bottom: 0.1rem;
 }
 
-.stat-unit {
+.data-label {
+  color: #b9ff7b;
   font-size: 1rem;
-  color: #6c757d;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-weight: 500;
 }
 
-/* 附加数据区 */
-.additional-stats {
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 12px;
-  padding: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.additional-stat-row {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-.stat-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  width: 100%;
-}
-
-.stat-item:last-child {
-  border-bottom: none;
-}
-
-.stat-item-label {
-  color: #a3b3c7;
-  font-size: 1.15rem;
-  flex: 1;
-}
-
-.stat-item-value {
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 1.5rem;
-  text-align: right;
-  min-width: fit-content;
-  margin-left: 0.5rem;
-  font-family: 'Bahnschrift SemiBold', 'Resonay', 'Lovefern Script', 'Beloved Script', cursive;
-  background: linear-gradient(90deg, #8A2BE2, #FF6B6B);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
-
-.stat-unit-small {
-  font-size: 0.8rem;
-  color: #6c757d;
-  margin-left: 0.2rem;
-  font-weight: normal;
-}
-
-.cooldown-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 0.8rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.cooldown-label {
-  color: #a3b3c7;
-  font-size: 1.15rem;
-}
-
-.cooldown-value {
-  color: #2fb2bb;
-  font-weight: 700;
-  font-size: 1.5rem;
-  background: rgba(255, 255, 255, 0.08);
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  background: linear-gradient(90deg, #d9f3f5, #42c882);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
-
-/* 响应式设计 */
-@media (max-width: 768px) {
-  .user-info-container {
-    padding: 1rem;
-  }
-  
-  .content-wrapper {
-    padding: 1rem;
-  }
-  
-  .card-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
-  }
-  
-  .card-content {
-    flex-direction: column;
-    padding: 1rem;
-  }
-  
-  .profile-section {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .user-basic-info {
-    width: 100%;
-  }
-  
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .size-value-wrapper {
-    font-size: 2.5rem;
-  }
-  
-  .size-value {
-    font-size: 2.5rem;
-  }
-  
-  .size-unit {
-    font-size: 1rem;
-  }
-  
-  .modern-rank-badge {
-    width: 70px;
-    height: 70px;
-  }
-  
-  .rank-inner {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .rank-text {
-    font-size: 1.2rem;
-  }
-  
-  .avatar-ring {
-    width: 70px;
-    height: 70px;
-  }
-}
-
-@media (max-width: 480px) {
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .size-value-wrapper {
-    font-size: 2rem;
-  }
-  
-  .size-value {
-    font-size: 2rem;
-  }
-  
-  .size-unit {
-    font-size: 0.9rem;
-  }
-  
-  .stat-card {
-    padding: 0.6rem;
-  }
-  
-  .stat-value {
-    font-size: 1.5rem;
-  }
+.bottom-decoration {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0.3rem;
+  opacity: 0.8;
 }
 </style>
       </head>
       <body>
-        <div id="app"><div class="user-info-container"><!-- 动态背景 --><div class="background-animation"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div><div class="orb orb-4"></div><div class="grid-overlay"></div><div class="floating-particles"></div></div><div class="content-wrapper"><!-- 现代化用户卡片 --><div class="modern-user-card"><div class="card-header"><!-- 排名徽章 --><div class="modern-rank-badge"><div class="rank-first rank-inner"><span class="rank-text">1</span><span class="rank-label">排名</span></div></div><!-- 头像与基本信息 --><div class="profile-section"><div class="avatar-container"><div class="ring-gold avatar-ring"><img class="avatar-image" src="https://q1.qlogo.cn/g?b=qq&amp;nk=123456789&amp;s=0" alt="测试用户"></div><div class="achievement-badge"> 超神 </div></div><div class="user-basic-info"><h2 class="text-gold user-nickname">测试用户</h2><div class="user-id">ID: 123456789</div></div></div></div><div class="card-content"><!-- 尺寸展示区 --><div class="size-display-section"><div class="size-display-container"><div class="text-gold size-value-wrapper"><span class="size-value">25.6</span><span class="size-unit">cm</span></div></div></div><!-- 数据统计区 --><div class="stats-section"><div class="stats-grid"><div class="stat-card"><div class="stat-value">128<span class="stat-unit">次</span></div><div class="stat-label">被透</div></div><div class="stat-card"><div class="stat-value">89<span class="stat-unit">次</span></div><div class="stat-label">打胶</div></div><div class="stat-card"><div class="stat-value">95<span class="stat-unit">点</span></div><div class="stat-label">魅力</div></div><div class="stat-card"><div class="stat-value">99.5<span class="stat-unit">%</span></div><div class="stat-label">击败玩家</div></div></div><!-- 附加数据区 --><div class="additional-stats"><div class="additional-stat-row"><div class="stat-item"><span class="stat-item-label">被注入总量</span><span class="stat-item-value">2560<span class="stat-unit-small">ml</span></span></div><div class="stat-item"><span class="stat-item-label">释放总量</span><span class="stat-item-value">1890<span class="stat-unit-small">ml</span></span></div></div><div class="cooldown-section"><div class="cooldown-label">冷却时间</div><div class="cooldown-value">00:15:30</div></div></div></div></div></div></div></div></div>
+        <div id="app"><div class="niu-rank-container"><!-- 背景装饰 --><div class="background-decoration"><div class="decoration-circle amber-circle"></div><div class="decoration-circle blue-circle"></div><div class="decoration-circle purple-circle"></div></div><div class="content-wrapper"><!-- 标题区域 --><div class="header-section"><div class="title-wrapper"><h1 class="main-title"><svg t="1762013591640" class="icon" viewBox="0 0 1238 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7776" width="45" height="45"><path d="M1029.906558 390.329333c97.729813-40.507729 165.865386-95.566779 165.865386-196.049544C1195.771944 45.915314 924.212847-102.44916 1071.692444 95.370139c140.695535 187.594047-252.28843 175.009121-293.189439 173.239367a257.204417 257.204417 0 0 0-307.642439 0.491598c-86.029765 1.966395-404.684013-1.966395-275.885165-173.730965C344.126433-102.44916 71.780778 45.915314 71.780778 194.279789c0 100.581085 68.233893 155.640134 166.160345 196.639462-5.997504 0-12.093327-0.589918-18.18915-0.589918-99.696207 0-235.967355 108.151704-218.171483 180.318387 16.910994 67.643975 118.475276 72.166683 218.171483 72.166682a226.135382 226.135382 0 0 0 122.997984-34.116946 216.303409 216.303409 0 0 1 86.226404 243.734613 91.142391 91.142391 0 0 0 21.728661 89.274316c49.159866 51.716179 109.331541 82.293615 174.812482 82.293615 61.548152 0 118.671916-27.037926 165.963706-73.2482a89.962554 89.962554 0 0 0 22.515218-92.813826A216.303409 216.303409 0 0 1 896.978281 609.582333a227.118579 227.118579 0 0 0 121.326549 33.03543c99.597888 0 201.16217-4.522708 218.073163-72.166683 17.402592-69.708689-108.250024-172.354489-206.471435-180.121747z m-673.195199 43.65396c-2.163034-1.671435-4.326068-3.441191-6.587422-5.014306l7.570619 2.261354c-0.393279 1.376476-0.688238 1.868075-0.983197 2.752952z m61.253192 192.215075a76.88603 76.88603 0 0 1-21.237062-58.991839 73.543159 73.543159 0 0 1 79.835622 79.835622 76.88603 0 0 1-58.59856-20.843783z m109.233221 328.97782a29.495919 29.495919 0 1 1 29.49592-29.495919 29.495919 29.495919 0 0 1-29.49592 29.495919z m186.80749 0a29.495919 29.495919 0 1 1 29.495919-29.495919 29.495919 29.495919 0 0 1-29.495919 29.495919z m106.480268-328.97782a76.68939 76.68939 0 0 1-58.991838 21.237062 73.543159 73.543159 0 0 1 79.835621-79.835622 76.88603 0 0 1-20.843783 58.59856z" p-id="7777" data-spm-anchor-id="a313x.search_index.0.i16.2f7b3a81QaF3Dg" class="selected"></path></svg> 牛牛争霸榜 <svg t="1762013591640" class="icon" viewBox="0 0 1238 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7776" width="45" height="45"><path d="M1029.906558 390.329333c97.729813-40.507729 165.865386-95.566779 165.865386-196.049544C1195.771944 45.915314 924.212847-102.44916 1071.692444 95.370139c140.695535 187.594047-252.28843 175.009121-293.189439 173.239367a257.204417 257.204417 0 0 0-307.642439 0.491598c-86.029765 1.966395-404.684013-1.966395-275.885165-173.730965C344.126433-102.44916 71.780778 45.915314 71.780778 194.279789c0 100.581085 68.233893 155.640134 166.160345 196.639462-5.997504 0-12.093327-0.589918-18.18915-0.589918-99.696207 0-235.967355 108.151704-218.171483 180.318387 16.910994 67.643975 118.475276 72.166683 218.171483 72.166682a226.135382 226.135382 0 0 0 122.997984-34.116946 216.303409 216.303409 0 0 1 86.226404 243.734613 91.142391 91.142391 0 0 0 21.728661 89.274316c49.159866 51.716179 109.331541 82.293615 174.812482 82.293615 61.548152 0 118.671916-27.037926 165.963706-73.2482a89.962554 89.962554 0 0 0 22.515218-92.813826A216.303409 216.303409 0 0 1 896.978281 609.582333a227.118579 227.118579 0 0 0 121.326549 33.03543c99.597888 0 201.16217-4.522708 218.073163-72.166683 17.402592-69.708689-108.250024-172.354489-206.471435-180.121747z m-673.195199 43.65396c-2.163034-1.671435-4.326068-3.441191-6.587422-5.014306l7.570619 2.261354c-0.393279 1.376476-0.688238 1.868075-0.983197 2.752952z m61.253192 192.215075a76.88603 76.88603 0 0 1-21.237062-58.991839 73.543159 73.543159 0 0 1 79.835622 79.835622 76.88603 0 0 1-58.59856-20.843783z m109.233221 328.97782a29.495919 29.495919 0 1 1 29.49592-29.495919 29.495919 29.495919 0 0 1-29.49592 29.495919z m186.80749 0a29.495919 29.495919 0 1 1 29.495919-29.495919 29.495919 29.495919 0 0 1-29.495919 29.495919z m106.480268-328.97782a76.68939 76.68939 0 0 1-58.991838 21.237062 73.543159 73.543159 0 0 1 79.835621-79.835622 76.88603 0 0 1-20.843783 58.59856z" p-id="7777" data-spm-anchor-id="a313x.search_index.0.i16.2f7b3a81QaF3Dg" class="selected"></path></svg></h1><div class="title-glow"></div></div><p class="subtitle">TOP 20 牛子王闪耀登场</p></div><!-- 排行榜网格 --><div class="ranking-grid"><!--[--><div class="ranking-card"><div class="card-content"><!-- 排名徽章 --><div class="rank-section"><div class="rank-first rank-number">1</div></div><!-- 头像区域 --><div class="avatar-section"><div class="avatar-wrapper"><div class="bg-gradient-to-br from-amber-400 to-amber-500 avatar-border"><img class="avatar-image" src="https://q1.qlogo.cn/g?b=qq&amp;nk=100000010&amp;s=0" alt="厉害奶牛11"></div><!-- 成就标识 --><div class="achievement-tag"> 超神 </div></div></div><!-- 用户信息 --><div class="info-section"><div class="info-left"><div class="user-header"><h3 class="text-amber-200 user-nickname">厉害奶牛11</h3></div><div class="text-amber-300 user-id"> ID: 100000010</div><!-- 主要数据 --><div class="data-section"><div class="data-item"><span class="text-amber-200 value-number">10</span><span class="data-unit">次</span><span class="data-label">被透</span></div><div class="data-item"><span class="text-amber-200 value-number">3</span><span class="data-unit">次</span><span class="data-label">释放</span></div><div class="data-item"><span class="text-amber-200 value-number">89</span><span class="data-unit">点</span><span class="data-label">魅力</span></div><div class="data-item"><span class="text-amber-200 value-number">100</span><span class="data-unit">%</span><span class="data-label">击败</span></div></div></div><div class="info-right"><div class="length-display"><span class="length-value-first length-value">147</span><span class="length-unit">cm</span></div></div></div></div><!-- 底部装饰 --><div class="bg-gradient-to-r from-amber-400 to-amber-600 bottom-decoration"></div></div><div class="ranking-card"><div class="card-content"><!-- 排名徽章 --><div class="rank-section"><div class="rank-second rank-number">2</div></div><!-- 头像区域 --><div class="avatar-section"><div class="avatar-wrapper"><div class="bg-gradient-to-br from-purple-400 to-purple-500 avatar-border"><img class="avatar-image" src="https://q1.qlogo.cn/g?b=qq&amp;nk=100000001&amp;s=0" alt="无敌牦牛2"></div><!-- 成就标识 --><div class="achievement-tag"> 超神 </div></div></div><!-- 用户信息 --><div class="info-section"><div class="info-left"><div class="user-header"><h3 class="text-purple-200 user-nickname">无敌牦牛2</h3></div><div class="text-purple-300 user-id"> ID: 100000001</div><!-- 主要数据 --><div class="data-section"><div class="data-item"><span class="text-purple-200 value-number">12</span><span class="data-unit">次</span><span class="data-label">被透</span></div><div class="data-item"><span class="text-purple-200 value-number">3</span><span class="data-unit">次</span><span class="data-label">释放</span></div><div class="data-item"><span class="text-purple-200 value-number">80</span><span class="data-unit">点</span><span class="data-label">魅力</span></div><div class="data-item"><span class="text-purple-200 value-number">98</span><span class="data-unit">%</span><span class="data-label">击败</span></div></div></div><div class="info-right"><div class="length-display"><span class="length-value-second length-value">144</span><span class="length-unit">cm</span></div></div></div></div><!-- 底部装饰 --><div class="bg-gradient-to-r from-purple-400 to-purple-600 bottom-decoration"></div></div><div class="ranking-card"><div class="card-content"><!-- 排名徽章 --><div class="rank-section"><div class="rank-third rank-number">3</div></div><!-- 头像区域 --><div class="avatar-section"><div class="avatar-wrapper"><div class="bg-gradient-to-br from-blue-400 to-blue-500 avatar-border"><img class="avatar-image" src="https://q1.qlogo.cn/g?b=qq&amp;nk=100000012&amp;s=0" alt="炫酷公牛13"></div><!-- 成就标识 --><div class="achievement-tag"> 超神 </div></div></div><!-- 用户信息 --><div class="info-section"><div class="info-left"><div class="user-header"><h3 class="text-blue-200 user-nickname">炫酷公牛13</h3></div><div class="text-blue-300 user-id"> ID: 100000012</div><!-- 主要数据 --><div class="data-section"><div class="data-item"><span class="text-blue-200 value-number">16</span><span class="data-unit">次</span><span class="data-label">被透</span></div><div class="data-item"><span class="text-blue-200 value-number">9</span><span class="data-unit">次</span><span class="data-label">释放</span></div><div class="data-item"><span class="text-blue-200 value-number">67</span><span class="data-unit">点</span><span class="data-label">魅力</span></div><div class="data-item"><span class="text-blue-200 value-number">86.4</span><span class="data-unit">%</span><span class="data-label">击败</span></div></div></div><div class="info-right"><div class="length-display"><span class="length-value-third length-value">127</span><span class="length-unit">cm</span></div></div></div></div><!-- 底部装饰 --><div class="bg-gradient-to-r from-blue-400 to-blue-600 bottom-decoration"></div></div><div class="ranking-card"><div class="card-content"><!-- 排名徽章 --><div class="rank-section"><div class="rank-normal rank-number">4</div></div><!-- 头像区域 --><div class="avatar-section"><div class="avatar-wrapper"><div class="bg-gradient-to-br from-slate-500 to-slate-600 avatar-border"><img class="avatar-image" src="https://q1.qlogo.cn/g?b=qq&amp;nk=100000017&amp;s=0" alt="威猛牛仔18"></div><!-- 成就标识 --><div class="achievement-tag"> 超神 </div></div></div><!-- 用户信息 --><div class="info-section"><div class="info-left"><div class="user-header"><h3 class="text-slate-200 user-nickname">威猛牛仔18</h3></div><div class="text-slate-300 user-id"> ID: 100000017</div><!-- 主要数据 --><div class="data-section"><div class="data-item"><span class="text-slate-200 value-number">16</span><span class="data-unit">次</span><span class="data-label">被透</span></div><div class="data-item"><span class="text-slate-200 value-number">8</span><span class="data-unit">次</span><span class="data-label">释放</span></div><div class="data-item"><span class="text-slate-200 value-number">89</span><span class="data-unit">点</span><span class="data-label">魅力</span></div><div class="data-item"><span class="text-slate-200 value-number">85</span><span class="data-unit">%</span><span class="data-label">击败</span></div></div></div><div class="info-right"><div class="length-display"><span class="length-value-normal length-value">125</span><span class="length-unit">cm</span></div></div></div></div><!-- 底部装饰 --><div class="bg-gradient-to-r from-slate-400 to-slate-600 bottom-decoration"></div></div><div class="ranking-card"><div class="card-content"><!-- 排名徽章 --><div class="rank-section"><div class="rank-normal rank-number">5</div></div><!-- 头像区域 --><div class="avatar-section"><div class="avatar-wrapper"><div class="bg-gradient-to-br from-slate-500 to-slate-600 avatar-border"><img class="avatar-image" src="https://q1.qlogo.cn/g?b=qq&amp;nk=100000019&amp;s=0" alt="炫酷火牛20"></div><!-- 成就标识 --><div class="achievement-tag"> 超神 </div></div></div><!-- 用户信息 --><div class="info-section"><div class="info-left"><div class="user-header"><h3 class="text-slate-200 user-nickname">炫酷火牛20</h3></div><div class="text-slate-300 user-id"> ID: 100000019</div><!-- 主要数据 --><div class="data-section"><div class="data-item"><span class="text-slate-200 value-number">19</span><span class="data-unit">次</span><span class="data-label">被透</span></div><div class="data-item"><span class="text-slate-200 value-number">5</span><span class="data-unit">次</span><span class="data-label">释放</span></div><div class="data-item"><span class="text-slate-200 value-number">81</span><span class="data-unit">点</span><span class="data-label">魅力</span></div><div class="data-item"><span class="text-slate-200 value-number">85</span><span class="data-unit">%</span><span class="data-label">击败</span></div></div></div><div class="info-right"><div class="length-display"><span class="length-value-normal length-value">125</span><span class="length-unit">cm</span></div></div></div></div><!-- 底部装饰 --><div class="bg-gradient-to-r from-slate-400 to-slate-600 bottom-decoration"></div></div><div class="ranking-card"><div class="card-content"><!-- 排名徽章 --><div class="rank-section"><div class="rank-normal rank-number">6</div></div><!-- 头像区域 --><div class="avatar-section"><div class="avatar-wrapper"><div class="bg-gradient-to-br from-slate-500 to-slate-600 avatar-border"><img class="avatar-image" src="https://q1.qlogo.cn/g?b=qq&amp;nk=100000005&amp;s=0" alt="霸气海牛6"></div><!-- 成就标识 --><div class="achievement-tag"> 超神 </div></div></div><!-- 用户信息 --><div class="info-section"><div class="info-left"><div class="user-header"><h3 class="text-slate-200 user-nickname">霸气海牛6</h3></div><div class="text-slate-300 user-id"> ID: 100000005</div><!-- 主要数据 --><div class="data-section"><div class="data-item"><span class="text-slate-200 value-number">17</span><span class="data-unit">次</span><span class="data-label">被透</span></div><div class="data-item"><span class="text-slate-200 value-number">9</span><span class="data-unit">次</span><span class="data-label">释放</span></div><div class="data-item"><span class="text-slate-200 value-number">70</span><span class="data-unit">点</span><span class="data-label">魅力</span></div><div class="data-item"><span class="text-slate-200 value-number">84.4</span><span class="data-unit">%</span><span class="data-label">击败</span></div></div></div><div class="info-right"><div class="length-display"><span class="length-value-normal length-value">124</span><span class="length-unit">cm</span></div></div></div></div><!-- 底部装饰 --><div class="bg-gradient-to-r from-slate-400 to-slate-600 bottom-decoration"></div></div><div class="ranking-card"><div class="card-content"><!-- 排名徽章 --><div class="rank-section"><div class="rank-normal rank-number">7</div></div><!-- 头像区域 --><div class="avatar-section"><div class="avatar-wrapper"><div class="bg-gradient-to-br from-slate-500 to-slate-600 avatar-border"><img class="avatar-image" src="https://q1.qlogo.cn/g?b=qq&amp;nk=100000015&amp;s=0" alt="霸气蜗牛16"></div><!-- 成就标识 --><div class="achievement-tag"> 超神 </div></div></div><!-- 用户信息 --><div class="info-section"><div class="info-left"><div class="user-header"><h3 class="text-slate-200 user-nickname">霸气蜗牛16</h3></div><div class="text-slate-300 user-id"> ID: 100000015</div><!-- 主要数据 --><div class="data-section"><div class="data-item"><span class="text-slate-200 value-number">3</span><span class="data-unit">次</span><span class="data-label">被透</span></div><div class="data-item"><span class="text-slate-200 value-number">9</span><span class="data-unit">次</span><span class="data-label">释放</span></div><div class="data-item"><span class="text-slate-200 value-number">60</span><span class="data-unit">点</span><span class="data-label">魅力</span></div><div class="data-item"><span class="text-slate-200 value-number">80.3</span><span class="data-unit">%</span><span class="data-label">击败</span></div></div></div><div class="info-right"><div class="length-display"><span class="length-value-normal length-value">118</span><span class="length-unit">cm</span></div></div></div></div><!-- 底部装饰 --><div class="bg-gradient-to-r from-slate-400 to-slate-600 bottom-decoration"></div></div><div class="ranking-card"><div class="card-content"><!-- 排名徽章 --><div class="rank-section"><div class="rank-normal rank-number">8</div></div><!-- 头像区域 --><div class="avatar-section"><div class="avatar-wrapper"><div class="bg-gradient-to-br from-slate-500 to-slate-600 avatar-border"><img class="avatar-image" src="https://q1.qlogo.cn/g?b=qq&amp;nk=100000016&amp;s=0" alt="超级奶牛17"></div><!-- 成就标识 --><div class="achievement-tag"> 超神 </div></div></div><!-- 用户信息 --><div class="info-section"><div class="info-left"><div class="user-header"><h3 class="text-slate-200 user-nickname">超级奶牛17</h3></div><div class="text-slate-300 user-id"> ID: 100000016</div><!-- 主要数据 --><div class="data-section"><div class="data-item"><span class="text-slate-200 value-number">7</span><span class="data-unit">次</span><span class="data-label">被透</span></div><div class="data-item"><span class="text-slate-200 value-number">8</span><span class="data-unit">次</span><span class="data-label">释放</span></div><div class="data-item"><span class="text-slate-200 value-number">78</span><span class="data-unit">点</span><span class="data-label">魅力</span></div><div class="data-item"><span class="text-slate-200 value-number">77.6</span><span class="data-unit">%</span><span class="data-label">击败</span></div></div></div><div class="info-right"><div class="length-display"><span class="length-value-normal length-value">114</span><span class="length-unit">cm</span></div></div></div></div><!-- 底部装饰 --><div class="bg-gradient-to-r from-slate-400 to-slate-600 bottom-decoration"></div></div><div class="ranking-card"><div class="card-content"><!-- 排名徽章 --><div class="rank-section"><div class="rank-normal rank-number">9</div></div><!-- 头像区域 --><div class="avatar-section"><div class="avatar-wrapper"><div class="bg-gradient-to-br from-slate-500 to-slate-600 avatar-border"><img class="avatar-image" src="https://q1.qlogo.cn/g?b=qq&amp;nk=100000003&amp;s=0" alt="超级蜗牛4"></div><!-- 成就标识 --><div class="achievement-tag"> 超神 </div></div></div><!-- 用户信息 --><div class="info-section"><div class="info-left"><div class="user-header"><h3 class="text-slate-200 user-nickname">超级蜗牛4</h3></div><div class="text-slate-300 user-id"> ID: 100000003</div><!-- 主要数据 --><div class="data-section"><div class="data-item"><span class="text-slate-200 value-number">14</span><span class="data-unit">次</span><span class="data-label">被透</span></div><div class="data-item"><span class="text-slate-200 value-number">7</span><span class="data-unit">次</span><span class="data-label">释放</span></div><div class="data-item"><span class="text-slate-200 value-number">73</span><span class="data-unit">点</span><span class="data-label">魅力</span></div><div class="data-item"><span class="text-slate-200 value-number">74.1</span><span class="data-unit">%</span><span class="data-label">击败</span></div></div></div><div class="info-right"><div class="length-display"><span class="length-value-normal length-value">109</span><span class="length-unit">cm</span></div></div></div></div><!-- 底部装饰 --><div class="bg-gradient-to-r from-slate-400 to-slate-600 bottom-decoration"></div></div><div class="ranking-card"><div class="card-content"><!-- 排名徽章 --><div class="rank-section"><div class="rank-normal rank-number">10</div></div><!-- 头像区域 --><div class="avatar-section"><div class="avatar-wrapper"><div class="bg-gradient-to-br from-slate-500 to-slate-600 avatar-border"><img class="avatar-image" src="https://q1.qlogo.cn/g?b=qq&amp;nk=100000004&amp;s=0" alt="霹雳牦牛5"></div><!-- 成就标识 --><div class="achievement-tag"> 超神 </div></div></div><!-- 用户信息 --><div class="info-section"><div class="info-left"><div class="user-header"><h3 class="text-slate-200 user-nickname">霹雳牦牛5</h3></div><div class="text-slate-300 user-id"> ID: 100000004</div><!-- 主要数据 --><div class="data-section"><div class="data-item"><span class="text-slate-200 value-number">3</span><span class="data-unit">次</span><span class="data-label">被透</span></div><div class="data-item"><span class="text-slate-200 value-number">9</span><span class="data-unit">次</span><span class="data-label">释放</span></div><div class="data-item"><span class="text-slate-200 value-number">90</span><span class="data-unit">点</span><span class="data-label">魅力</span></div><div class="data-item"><span class="text-slate-200 value-number">73.5</span><span class="data-unit">%</span><span class="data-label">击败</span></div></div></div><div class="info-right"><div class="length-display"><span class="length-value-normal length-value">108</span><span class="length-unit">cm</span></div></div></div></div><!-- 底部装饰 --><div class="bg-gradient-to-r from-slate-400 to-slate-600 bottom-decoration"></div></div><div class="ranking-card"><div class="card-content"><!-- 排名徽章 --><div class="rank-section"><div class="rank-normal rank-number">11</div></div><!-- 头像区域 --><div class="avatar-section"><div class="avatar-wrapper"><div class="bg-gradient-to-br from-slate-500 to-slate-600 avatar-border"><img class="avatar-image" src="https://q1.qlogo.cn/g?b=qq&amp;nk=100000002&amp;s=0" alt="炫酷公牛3"></div><!-- 成就标识 --><div class="achievement-tag"> 超神 </div></div></div><!-- 用户信息 --><div class="info-section"><div class="info-left"><div class="user-header"><h3 class="text-slate-200 user-nickname">炫酷公牛3</h3></div><div class="text-slate-300 user-id"> ID: 100000002</div><!-- 主要数据 --><div class="data-section"><div class="data-item"><span class="text-slate-200 value-number">1</span><span class="data-unit">次</span><span class="data-label">被透</span></div><div class="data-item"><span class="text-slate-200 value-number">1</span><span class="data-unit">次</span><span class="data-label">释放</span></div><div class="data-item"><span class="text-slate-200 value-number">75</span><span class="data-unit">点</span><span class="data-label">魅力</span></div><div class="data-item"><span class="text-slate-200 value-number">70.1</span><span class="data-unit">%</span><span class="data-label">击败</span></div></div></div><div class="info-right"><div class="length-display"><span class="length-value-normal length-value">103</span><span class="length-unit">cm</span></div></div></div></div><!-- 底部装饰 --><div class="bg-gradient-to-r from-slate-400 to-slate-600 bottom-decoration"></div></div><div class="ranking-card"><div class="card-content"><!-- 排名徽章 --><div class="rank-section"><div class="rank-normal rank-number">12</div></div><!-- 头像区域 --><div class="avatar-section"><div class="avatar-wrapper"><div class="bg-gradient-to-br from-slate-500 to-slate-600 avatar-border"><img class="avatar-image" src="https://q1.qlogo.cn/g?b=qq&amp;nk=100000006&amp;s=0" alt="无敌奶牛7"></div><!-- 成就标识 --><div class="achievement-tag"> 超神 </div></div></div><!-- 用户信息 --><div class="info-section"><div class="info-left"><div class="user-header"><h3 class="text-slate-200 user-nickname">无敌奶牛7</h3></div><div class="text-slate-300 user-id"> ID: 100000006</div><!-- 主要数据 --><div class="data-section"><div class="data-item"><span class="text-slate-200 value-number">9</span><span class="data-unit">次</span><span class="data-label">被透</span></div><div class="data-item"><span class="text-slate-200 value-number">7</span><span class="data-unit">次</span><span class="data-label">释放</span></div><div class="data-item"><span class="text-slate-200 value-number">68</span><span class="data-unit">点</span><span class="data-label">魅力</span></div><div class="data-item"><span class="text-slate-200 value-number">67.3</span><span class="data-unit">%</span><span class="data-label">击败</span></div></div></div><div class="info-right"><div class="length-display"><span class="length-value-normal length-value">99</span><span class="length-unit">cm</span></div></div></div></div><!-- 底部装饰 --><div class="bg-gradient-to-r from-slate-400 to-slate-600 bottom-decoration"></div></div><div class="ranking-card"><div class="card-content"><!-- 排名徽章 --><div class="rank-section"><div class="rank-normal rank-number">13</div></div><!-- 头像区域 --><div class="avatar-section"><div class="avatar-wrapper"><div class="bg-gradient-to-br from-slate-500 to-slate-600 avatar-border"><img class="avatar-image" src="https://q1.qlogo.cn/g?b=qq&amp;nk=100000013&amp;s=0" alt="霹雳蛮牛14"></div><!-- 成就标识 --><div class="achievement-tag"> 超神 </div></div></div><!-- 用户信息 --><div class="info-section"><div class="info-left"><div class="user-header"><h3 class="text-slate-200 user-nickname">霹雳蛮牛14</h3></div><div class="text-slate-300 user-id"> ID: 100000013</div><!-- 主要数据 --><div class="data-section"><div class="data-item"><span class="text-slate-200 value-number">17</span><span class="data-unit">次</span><span class="data-label">被透</span></div><div class="data-item"><span class="text-slate-200 value-number">6</span><span class="data-unit">次</span><span class="data-label">释放</span></div><div class="data-item"><span class="text-slate-200 value-number">87</span><span class="data-unit">点</span><span class="data-label">魅力</span></div><div class="data-item"><span class="text-slate-200 value-number">55.1</span><span class="data-unit">%</span><span class="data-label">击败</span></div></div></div><div class="info-right"><div class="length-display"><span class="length-value-normal length-value">81</span><span class="length-unit">cm</span></div></div></div></div><!-- 底部装饰 --><div class="bg-gradient-to-r from-slate-400 to-slate-600 bottom-decoration"></div></div><div class="ranking-card"><div class="card-content"><!-- 排名徽章 --><div class="rank-section"><div class="rank-normal rank-number">14</div></div><!-- 头像区域 --><div class="avatar-section"><div class="avatar-wrapper"><div class="bg-gradient-to-br from-slate-500 to-slate-600 avatar-border"><img class="avatar-image" src="https://q1.qlogo.cn/g?b=qq&amp;nk=100000011&amp;s=0" alt="超级犀牛12"></div><!-- 成就标识 --><div class="achievement-tag"> 超神 </div></div></div><!-- 用户信息 --><div class="info-section"><div class="info-left"><div class="user-header"><h3 class="text-slate-200 user-nickname">超级犀牛12</h3></div><div class="text-slate-300 user-id"> ID: 100000011</div><!-- 主要数据 --><div class="data-section"><div class="data-item"><span class="text-slate-200 value-number">18</span><span class="data-unit">次</span><span class="data-label">被透</span></div><div class="data-item"><span class="text-slate-200 value-number">1</span><span class="data-unit">次</span><span class="data-label">释放</span></div><div class="data-item"><span class="text-slate-200 value-number">67</span><span class="data-unit">点</span><span class="data-label">魅力</span></div><div class="data-item"><span class="text-slate-200 value-number">44.9</span><span class="data-unit">%</span><span class="data-label">击败</span></div></div></div><div class="info-right"><div class="length-display"><span class="length-value-normal length-value">66</span><span class="length-unit">cm</span></div></div></div></div><!-- 底部装饰 --><div class="bg-gradient-to-r from-slate-400 to-slate-600 bottom-decoration"></div></div><div class="ranking-card"><div class="card-content"><!-- 排名徽章 --><div class="rank-section"><div class="rank-normal rank-number">15</div></div><!-- 头像区域 --><div class="avatar-section"><div class="avatar-wrapper"><div class="bg-gradient-to-br from-slate-500 to-slate-600 avatar-border"><img class="avatar-image" src="https://q1.qlogo.cn/g?b=qq&amp;nk=100000008&amp;s=0" alt="无敌牦牛9"></div><!-- 成就标识 --><div class="achievement-tag"> 超神 </div></div></div><!-- 用户信息 --><div class="info-section"><div class="info-left"><div class="user-header"><h3 class="text-slate-200 user-nickname">无敌牦牛9</h3></div><div class="text-slate-300 user-id"> ID: 100000008</div><!-- 主要数据 --><div class="data-section"><div class="data-item"><span class="text-slate-200 value-number">24</span><span class="data-unit">次</span><span class="data-label">被透</span></div><div class="data-item"><span class="text-slate-200 value-number">4</span><span class="data-unit">次</span><span class="data-label">释放</span></div><div class="data-item"><span class="text-slate-200 value-number">74</span><span class="data-unit">点</span><span class="data-label">魅力</span></div><div class="data-item"><span class="text-slate-200 value-number">44.2</span><span class="data-unit">%</span><span class="data-label">击败</span></div></div></div><div class="info-right"><div class="length-display"><span class="length-value-normal length-value">65</span><span class="length-unit">cm</span></div></div></div></div><!-- 底部装饰 --><div class="bg-gradient-to-r from-slate-400 to-slate-600 bottom-decoration"></div></div><div class="ranking-card"><div class="card-content"><!-- 排名徽章 --><div class="rank-section"><div class="rank-normal rank-number">16</div></div><!-- 头像区域 --><div class="avatar-section"><div class="avatar-wrapper"><div class="bg-gradient-to-br from-slate-500 to-slate-600 avatar-border"><img class="avatar-image" src="https://q1.qlogo.cn/g?b=qq&amp;nk=100000007&amp;s=0" alt="霹雳牦牛8"></div><!-- 成就标识 --><div class="achievement-tag"> 超神 </div></div></div><!-- 用户信息 --><div class="info-section"><div class="info-left"><div class="user-header"><h3 class="text-slate-200 user-nickname">霹雳牦牛8</h3></div><div class="text-slate-300 user-id"> ID: 100000007</div><!-- 主要数据 --><div class="data-section"><div class="data-item"><span class="text-slate-200 value-number">13</span><span class="data-unit">次</span><span class="data-label">被透</span></div><div class="data-item"><span class="text-slate-200 value-number">4</span><span class="data-unit">次</span><span class="data-label">释放</span></div><div class="data-item"><span class="text-slate-200 value-number">72</span><span class="data-unit">点</span><span class="data-label">魅力</span></div><div class="data-item"><span class="text-slate-200 value-number">42.2</span><span class="data-unit">%</span><span class="data-label">击败</span></div></div></div><div class="info-right"><div class="length-display"><span class="length-value-normal length-value">62</span><span class="length-unit">cm</span></div></div></div></div><!-- 底部装饰 --><div class="bg-gradient-to-r from-slate-400 to-slate-600 bottom-decoration"></div></div><div class="ranking-card"><div class="card-content"><!-- 排名徽章 --><div class="rank-section"><div class="rank-normal rank-number">17</div></div><!-- 头像区域 --><div class="avatar-section"><div class="avatar-wrapper"><div class="bg-gradient-to-br from-slate-500 to-slate-600 avatar-border"><img class="avatar-image" src="https://q1.qlogo.cn/g?b=qq&amp;nk=100000009&amp;s=0" alt="神奇牦牛10"></div><!-- 成就标识 --><div class="achievement-tag"> 超神 </div></div></div><!-- 用户信息 --><div class="info-section"><div class="info-left"><div class="user-header"><h3 class="text-slate-200 user-nickname">神奇牦牛10</h3></div><div class="text-slate-300 user-id"> ID: 100000009</div><!-- 主要数据 --><div class="data-section"><div class="data-item"><span class="text-slate-200 value-number">7</span><span class="data-unit">次</span><span class="data-label">被透</span></div><div class="data-item"><span class="text-slate-200 value-number">8</span><span class="data-unit">次</span><span class="data-label">释放</span></div><div class="data-item"><span class="text-slate-200 value-number">61</span><span class="data-unit">点</span><span class="data-label">魅力</span></div><div class="data-item"><span class="text-slate-200 value-number">41.5</span><span class="data-unit">%</span><span class="data-label">击败</span></div></div></div><div class="info-right"><div class="length-display"><span class="length-value-normal length-value">61</span><span class="length-unit">cm</span></div></div></div></div><!-- 底部装饰 --><div class="bg-gradient-to-r from-slate-400 to-slate-600 bottom-decoration"></div></div><div class="ranking-card"><div class="card-content"><!-- 排名徽章 --><div class="rank-section"><div class="rank-normal rank-number">18</div></div><!-- 头像区域 --><div class="avatar-section"><div class="avatar-wrapper"><div class="bg-gradient-to-br from-slate-500 to-slate-600 avatar-border"><img class="avatar-image" src="https://q1.qlogo.cn/g?b=qq&amp;nk=100000018&amp;s=0" alt="炫酷牦牛19"></div><!-- 成就标识 --><div class="achievement-tag"> 超神 </div></div></div><!-- 用户信息 --><div class="info-section"><div class="info-left"><div class="user-header"><h3 class="text-slate-200 user-nickname">炫酷牦牛19</h3></div><div class="text-slate-300 user-id"> ID: 100000018</div><!-- 主要数据 --><div class="data-section"><div class="data-item"><span class="text-slate-200 value-number">21</span><span class="data-unit">次</span><span class="data-label">被透</span></div><div class="data-item"><span class="text-slate-200 value-number">2</span><span class="data-unit">次</span><span class="data-label">释放</span></div><div class="data-item"><span class="text-slate-200 value-number">98</span><span class="data-unit">点</span><span class="data-label">魅力</span></div><div class="data-item"><span class="text-slate-200 value-number">38.8</span><span class="data-unit">%</span><span class="data-label">击败</span></div></div></div><div class="info-right"><div class="length-display"><span class="length-value-normal length-value">57</span><span class="length-unit">cm</span></div></div></div></div><!-- 底部装饰 --><div class="bg-gradient-to-r from-slate-400 to-slate-600 bottom-decoration"></div></div><div class="ranking-card"><div class="card-content"><!-- 排名徽章 --><div class="rank-section"><div class="rank-normal rank-number">19</div></div><!-- 头像区域 --><div class="avatar-section"><div class="avatar-wrapper"><div class="bg-gradient-to-br from-slate-500 to-slate-600 avatar-border"><img class="avatar-image" src="https://q1.qlogo.cn/g?b=qq&amp;nk=100000014&amp;s=0" alt="炫酷海牛15"></div><!-- 成就标识 --><div class="achievement-tag"> 超神 </div></div></div><!-- 用户信息 --><div class="info-section"><div class="info-left"><div class="user-header"><h3 class="text-slate-200 user-nickname">炫酷海牛15</h3></div><div class="text-slate-300 user-id"> ID: 100000014</div><!-- 主要数据 --><div class="data-section"><div class="data-item"><span class="text-slate-200 value-number">5</span><span class="data-unit">次</span><span class="data-label">被透</span></div><div class="data-item"><span class="text-slate-200 value-number">9</span><span class="data-unit">次</span><span class="data-label">释放</span></div><div class="data-item"><span class="text-slate-200 value-number">71</span><span class="data-unit">点</span><span class="data-label">魅力</span></div><div class="data-item"><span class="text-slate-200 value-number">35.4</span><span class="data-unit">%</span><span class="data-label">击败</span></div></div></div><div class="info-right"><div class="length-display"><span class="length-value-normal length-value">52</span><span class="length-unit">cm</span></div></div></div></div><!-- 底部装饰 --><div class="bg-gradient-to-r from-slate-400 to-slate-600 bottom-decoration"></div></div><div class="ranking-card"><div class="card-content"><!-- 排名徽章 --><div class="rank-section"><div class="rank-normal rank-number">20</div></div><!-- 头像区域 --><div class="avatar-section"><div class="avatar-wrapper"><div class="bg-gradient-to-br from-slate-500 to-slate-600 avatar-border"><img class="avatar-image" src="https://q1.qlogo.cn/g?b=qq&amp;nk=100000000&amp;s=0" alt="神奇牦牛1"></div><!-- 成就标识 --><div class="achievement-tag"> 超神 </div></div></div><!-- 用户信息 --><div class="info-section"><div class="info-left"><div class="user-header"><h3 class="text-slate-200 user-nickname">神奇牦牛1</h3></div><div class="text-slate-300 user-id"> ID: 100000000</div><!-- 主要数据 --><div class="data-section"><div class="data-item"><span class="text-slate-200 value-number">13</span><span class="data-unit">次</span><span class="data-label">被透</span></div><div class="data-item"><span class="text-slate-200 value-number">5</span><span class="data-unit">次</span><span class="data-label">释放</span></div><div class="data-item"><span class="text-slate-200 value-number">66</span><span class="data-unit">点</span><span class="data-label">魅力</span></div><div class="data-item"><span class="text-slate-200 value-number">34</span><span class="data-unit">%</span><span class="data-label">击败</span></div></div></div><div class="info-right"><div class="length-display"><span class="length-value-normal length-value">50</span><span class="length-unit">cm</span></div></div></div></div><!-- 底部装饰 --><div class="bg-gradient-to-r from-slate-400 to-slate-600 bottom-decoration"></div></div><!--]--></div></div></div></div>
       </body>
       </html>
     
