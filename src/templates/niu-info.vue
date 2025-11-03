@@ -23,7 +23,9 @@ defineProps<{
       <div class="orb orb-1"></div>
       <div class="orb orb-2"></div>
       <div class="orb orb-3"></div>
+      <div class="orb orb-4"></div>
       <div class="grid-overlay"></div>
+      <div class="floating-particles"></div>
     </div>
 
     <div class="content-wrapper">
@@ -170,6 +172,8 @@ defineProps<{
   left: 0;
   overflow: hidden;
   z-index: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .orb {
@@ -203,6 +207,14 @@ defineProps<{
   left: 15%;
 }
 
+.orb-4 {
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(45deg, #84fab0, #8fd3f4);
+  top: 70%;
+  left: 70%;
+}
+
 .grid-overlay {
   position: absolute;
   top: 0;
@@ -215,10 +227,22 @@ defineProps<{
   background-size: 20px 20px;
 }
 
+.floating-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    radial-gradient(rgba(255, 255, 255, 0.15) 0.5px, transparent 0.5px);
+  background-size: 40px 40px, 20px 20px;
+  background-position: 0 0, 20px 20px;
+}
+
 .content-wrapper {
   position: relative;
   z-index: 1;
-  padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -425,6 +449,13 @@ defineProps<{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: rgba(30, 35, 60, 0.3);
+  border-radius: 15px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 
+    0 10px 20px -5px rgba(0, 0, 0, 0.3),
+    inset 0 0 15px rgba(100, 150, 255, 0.1);
 }
 
 .size-display-container {
@@ -573,14 +604,14 @@ defineProps<{
 
 .stat-item-label {
   color: #a3b3c7;
-  font-size: 0.9rem;
+  font-size: 1.15rem;
   flex: 1;
 }
 
 .stat-item-value {
   color: #ffffff;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   text-align: right;
   min-width: fit-content;
   margin-left: 0.5rem;
@@ -609,13 +640,13 @@ defineProps<{
 
 .cooldown-label {
   color: #a3b3c7;
-  font-size: 0.9rem;
+  font-size: 1.15rem;
 }
 
 .cooldown-value {
   color: #2fb2bb;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.5rem;
   background: rgba(255, 255, 255, 0.08);
   padding: 0.3rem 0.8rem;
   border-radius: 20px;

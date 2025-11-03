@@ -168,7 +168,7 @@ async function testScreenshot(): Promise<boolean> {
       body: JSON.stringify({
         filename: VUE_FILENAME,
         width: 1000,
-        height: 900,
+        height: 450,
         scale: 3,
         type: 'png',
         fullPage: true,

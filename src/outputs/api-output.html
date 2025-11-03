@@ -28,6 +28,8 @@
   left: 0;
   overflow: hidden;
   z-index: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .orb {
@@ -61,6 +63,14 @@
   left: 15%;
 }
 
+.orb-4 {
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(45deg, #84fab0, #8fd3f4);
+  top: 70%;
+  left: 70%;
+}
+
 .grid-overlay {
   position: absolute;
   top: 0;
@@ -73,10 +83,22 @@
   background-size: 20px 20px;
 }
 
+.floating-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    radial-gradient(rgba(255, 255, 255, 0.15) 0.5px, transparent 0.5px);
+  background-size: 40px 40px, 20px 20px;
+  background-position: 0 0, 20px 20px;
+}
+
 .content-wrapper {
   position: relative;
   z-index: 1;
-  padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -283,6 +305,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: rgba(30, 35, 60, 0.3);
+  border-radius: 15px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 
+    0 10px 20px -5px rgba(0, 0, 0, 0.3),
+    inset 0 0 15px rgba(100, 150, 255, 0.1);
 }
 
 .size-display-container {
@@ -431,14 +460,14 @@
 
 .stat-item-label {
   color: #a3b3c7;
-  font-size: 0.9rem;
+  font-size: 1.15rem;
   flex: 1;
 }
 
 .stat-item-value {
   color: #ffffff;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   text-align: right;
   min-width: fit-content;
   margin-left: 0.5rem;
@@ -467,13 +496,13 @@
 
 .cooldown-label {
   color: #a3b3c7;
-  font-size: 0.9rem;
+  font-size: 1.15rem;
 }
 
 .cooldown-value {
   color: #2fb2bb;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.5rem;
   background: rgba(255, 255, 255, 0.08);
   padding: 0.3rem 0.8rem;
   border-radius: 20px;
@@ -579,7 +608,7 @@
 </style>
       </head>
       <body>
-        <div id="app"><div class="user-info-container"><!-- 动态背景 --><div class="background-animation"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div><div class="grid-overlay"></div></div><div class="content-wrapper"><!-- 现代化用户卡片 --><div class="modern-user-card"><div class="card-header"><!-- 排名徽章 --><div class="modern-rank-badge"><div class="rank-first rank-inner"><span class="rank-text">1</span><span class="rank-label">排名</span></div></div><!-- 头像与基本信息 --><div class="profile-section"><div class="avatar-container"><div class="ring-gold avatar-ring"><img class="avatar-image" src="https://q1.qlogo.cn/g?b=qq&amp;nk=123456789&amp;s=0" alt="测试用户"></div><div class="achievement-badge"> 超神 </div></div><div class="user-basic-info"><h2 class="text-gold user-nickname">测试用户</h2><div class="user-id">ID: 123456789</div></div></div></div><div class="card-content"><!-- 尺寸展示区 --><div class="size-display-section"><div class="size-display-container"><div class="text-gold size-value-wrapper"><span class="size-value">25.6</span><span class="size-unit">cm</span></div></div></div><!-- 数据统计区 --><div class="stats-section"><div class="stats-grid"><div class="stat-card"><div class="stat-value">128<span class="stat-unit">次</span></div><div class="stat-label">被透</div></div><div class="stat-card"><div class="stat-value">89<span class="stat-unit">次</span></div><div class="stat-label">打胶</div></div><div class="stat-card"><div class="stat-value">95<span class="stat-unit">点</span></div><div class="stat-label">魅力</div></div><div class="stat-card"><div class="stat-value">99.5<span class="stat-unit">%</span></div><div class="stat-label">击败玩家</div></div></div><!-- 附加数据区 --><div class="additional-stats"><div class="additional-stat-row"><div class="stat-item"><span class="stat-item-label">被注入总量</span><span class="stat-item-value">2560<span class="stat-unit-small">ml</span></span></div><div class="stat-item"><span class="stat-item-label">释放总量</span><span class="stat-item-value">1890<span class="stat-unit-small">ml</span></span></div></div><div class="cooldown-section"><div class="cooldown-label">冷却时间</div><div class="cooldown-value">00:15:30</div></div></div></div></div></div></div></div></div>
+        <div id="app"><div class="user-info-container"><!-- 动态背景 --><div class="background-animation"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div><div class="orb orb-4"></div><div class="grid-overlay"></div><div class="floating-particles"></div></div><div class="content-wrapper"><!-- 现代化用户卡片 --><div class="modern-user-card"><div class="card-header"><!-- 排名徽章 --><div class="modern-rank-badge"><div class="rank-first rank-inner"><span class="rank-text">1</span><span class="rank-label">排名</span></div></div><!-- 头像与基本信息 --><div class="profile-section"><div class="avatar-container"><div class="ring-gold avatar-ring"><img class="avatar-image" src="https://q1.qlogo.cn/g?b=qq&amp;nk=123456789&amp;s=0" alt="测试用户"></div><div class="achievement-badge"> 超神 </div></div><div class="user-basic-info"><h2 class="text-gold user-nickname">测试用户</h2><div class="user-id">ID: 123456789</div></div></div></div><div class="card-content"><!-- 尺寸展示区 --><div class="size-display-section"><div class="size-display-container"><div class="text-gold size-value-wrapper"><span class="size-value">25.6</span><span class="size-unit">cm</span></div></div></div><!-- 数据统计区 --><div class="stats-section"><div class="stats-grid"><div class="stat-card"><div class="stat-value">128<span class="stat-unit">次</span></div><div class="stat-label">被透</div></div><div class="stat-card"><div class="stat-value">89<span class="stat-unit">次</span></div><div class="stat-label">打胶</div></div><div class="stat-card"><div class="stat-value">95<span class="stat-unit">点</span></div><div class="stat-label">魅力</div></div><div class="stat-card"><div class="stat-value">99.5<span class="stat-unit">%</span></div><div class="stat-label">击败玩家</div></div></div><!-- 附加数据区 --><div class="additional-stats"><div class="additional-stat-row"><div class="stat-item"><span class="stat-item-label">被注入总量</span><span class="stat-item-value">2560<span class="stat-unit-small">ml</span></span></div><div class="stat-item"><span class="stat-item-label">释放总量</span><span class="stat-item-value">1890<span class="stat-unit-small">ml</span></span></div></div><div class="cooldown-section"><div class="cooldown-label">冷却时间</div><div class="cooldown-value">00:15:30</div></div></div></div></div></div></div></div></div>
       </body>
       </html>
     
