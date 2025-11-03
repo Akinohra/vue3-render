@@ -118,7 +118,7 @@ defineProps<{
                             'text-slate-200'"
                     >{{ user.item.injectedCount }}</span>
                     <span class="data-unit">次</span>
-                    <span class="data-label">透人</span>
+                    <span class="data-label">被透</span>
                   </div>
                   <div class="data-item">
                     <span 
@@ -129,7 +129,7 @@ defineProps<{
                             'text-slate-200'"
                     >{{ user.item.ejaculateCount }}</span>
                     <span class="data-unit">次</span>
-                    <span class="data-label">打胶</span>
+                    <span class="data-label">释放</span>
                   </div>
                   
                   <div class="data-item">
