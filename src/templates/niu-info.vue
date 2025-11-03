@@ -109,7 +109,7 @@ defineProps<{
               
               <div class="stat-card">
                 <div class="stat-value">{{ userInfo.ejaculateCount }}<span class="stat-unit">次</span></div>
-                <div class="stat-label">打胶</div>
+                <div class="stat-label">释放</div>
               </div>
               
               <div class="stat-card">
